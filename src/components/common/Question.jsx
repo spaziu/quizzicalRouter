@@ -21,14 +21,12 @@ export default function Question(props) {
   const displayAnwsers = props.answers.map((e) => (
     <span key={nanoid()}>
       <input
-        onChange={props.onChange}
         name={props.question}
         id={e}
         type="radio"
         value={e}
-        checked={props.answersSelected === e}
         required
-        disabled={props.isSubmited}
+        // disabled={}
         className="peer hidden"
       />
       <label
