@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@layer components {
+  .btn-primary {
+    @apply my-2
+    rounded-xl
+       bg-[#4D5B9E]
+       px-4
+       py-2
+       font-medium
+       text-white
+       hover:bg-[#4b5cd0];
+  }
+}
