@@ -1,5 +1,6 @@
 import { nanoid } from "nanoid";
 import { decode } from "html-entities";
+import React from "react";
 
 export default function Question(props) {
   const red = {
