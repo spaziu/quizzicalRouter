@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import Layout from "./Layouts/Layout";
-import Home from "./Routes/Home";
+import Home, { action as actionHome } from "./Routes/Home";
 import Quizz, {
   loader as loaderQuizz,
   action as actionQuizz,
@@ -17,7 +17,12 @@ import Error from "./Routes/Error";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />} errorElement={<Error />}>
-      <Route index element={<Home />} errorElement={<Error />} />
+      <Route
+        index
+        element={<Home />}
+        action={actionHome}
+        errorElement={<Error />}
+      />
       <Route
         path="quizz"
         element={<Quizz />}

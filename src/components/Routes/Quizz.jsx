@@ -31,11 +31,14 @@ export default function Quizz() {
 
   function fetchQuizz() {
     setScore(0);
-    const category =
-      quizz.category !== "any" ? `&category=${quizz.category}` : ``;
+    const params = {
+      category: quizz.category !== "any" ? `&category=${quizz.category}` : ``,
+      difficulty:
+        quizz.difficulty !== "any" ? `&difficulty=${quizz.difficulty}` : ``,
+    };
 
     fetch(
-      `https://opentdb.com/api.php?amount=5${category}&difficulty=${quizz.difficulty}&type=multiple`
+      `https://opentdb.com/api.php?amount=5${params.category}${params.difficulty}&type=multiple`
     )
       .then((r) => r.json())
       .then((d) =>
